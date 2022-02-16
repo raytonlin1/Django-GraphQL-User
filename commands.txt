@@ -1,0 +1,15 @@
+py -m venv venv
+venv\Scripts\activate
+pip install django
+django-admin startproject core .
+py manage.py startapp users
+pip install graphene-django
+pip install django-graphql-jwt
+pip install django-graphql-auth
+
+py manage.py makemigrations
+py manage.py migrate
+
+pip freeze > requirement.txt
+
+py manage.py createsuperuser (UN: admin, Email: a@a.com, PW: admin)
